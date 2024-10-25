@@ -1,0 +1,29 @@
+
+spring:
+  application:
+    name: COMMENT
+  datasource:
+    url: jdbc:mysql://localhost:3306/commentDB
+    username: root
+    password: pavan
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # This option can be 'validate', 'update', 'create', 'create-drop'
+    show-sql: true  # Show SQL statements in the log
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect  # Use appropriate dialect for your MySQL version
+
+server:
+  port: 8082
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
